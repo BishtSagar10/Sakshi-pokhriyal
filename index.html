@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Happy Birthday Sakshi 🍍🌸</title>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--pink:#ff8fb8;--rose:#ff5d8f;--yellow:#ffd84d;--mint:#9be7c4;--lav:#c9b6ff;--ink:#5b2a4a;--cream:#fff7ef}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{font-family:'Quicksand',system-ui,sans-serif;color:var(--ink);background:linear-gradient(160deg,#ffe3ef,#fff1d6 40%,#e6f7ff 70%,#f1e4ff);background-attachment:fixed;overflow-x:hidden}
+h1,h2{font-family:'Pacifico',cursive;font-weight:400}
+section{padding:70px 18px;max-width:980px;margin:auto;text-align:center}
+h2{font-size:clamp(28px,6vw,44px);color:var(--rose);margin-bottom:8px}
+.sub{margin-bottom:26px;opacity:.8}
+.reveal{opacity:0;transform:translateY(40px);transition:1s}
+.reveal.show{opacity:1;transform:none}
+button{font:inherit;font-weight:700;border:0;border-radius:30px;padding:12px 26px;color:#fff;background:linear-gradient(135deg,var(--rose),#ff9a5d);cursor:pointer;box-shadow:0 6px 16px #ff5d8f55;transition:.2s}
+button:hover{transform:scale(1.07)}
+/* gate */
+#gate{position:fixed;inset:0;z-index:100;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;background:radial-gradient(circle,#fff0f6,#ffc9de);transition:1s}
+#gate.hide{opacity:0;pointer-events:none;transform:scale(1.2)}
+#gate .gift{font-size:96px;animation:bounce 1.4s infinite}
+#gate p{font-size:18px;padding:0 20px}
+@keyframes bounce{50%{transform:translateY(-22px) rotate(6deg)}}
+/* floating petals */
+.fl{position:fixed;top:-50px;z-index:1;pointer-events:none;animation:fall linear forwards}
+@keyframes fall{to{transform:translateY(112vh) rotate(540deg)}}
+/* hero */
+#hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;position:relative}
+#hero h1{font-size:clamp(40px,10vw,84px);background:linear-gradient(90deg,var(--rose),#ff9a5d,var(--lav));-webkit-background-clip:text;background-clip:text;color:transparent;line-height:1.2}
+#hero .name{font-size:clamp(22px,5vw,34px);font-weight:700;margin:10px 0}
+.age{display:inline-block;margin:16px;font-size:60px;font-family:'Pacifico';color:#fff;background:linear-gradient(135deg,var(--yellow),#ff9a5d);width:130px;height:130px;line-height:130px;border-radius:50%;box-shadow:0 0 0 8px #fff8,0 10px 30px #ffb34755;animation:pulse 2s infinite}
+@keyframes pulse{50%{transform:scale(1.09) rotate(-4deg)}}
+.type{min-height:28px;font-weight:600}
+.scroll{margin-top:30px;font-size:30px;animation:bounce 1.6s infinite}
+/* cake */
+#cakeBox{position:relative;width:260px;margin:auto}
+.flame{transform-origin:50% 100%;animation:flick .4s infinite alternate}
+@keyframes flick{to{transform:scale(1.15,.9) rotate(4deg)}}
+.candle{cursor:pointer}
+.candle.out .flame{display:none}
+#wish{min-height:30px;margin-top:10px;font-weight:700;color:var(--rose)}
+/* gallery */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:26px}
+.pol{background:#fff;padding:12px 12px 16px;border-radius:8px;box-shadow:0 10px 26px #b3558033;transition:.4s;transform:rotate(var(--r))}
+.pol:hover{transform:rotate(0) scale(1.06);z-index:2}
+.pol .ph{aspect-ratio:1;border-radius:4px;overflow:hidden;background:linear-gradient(135deg,#ffd1e3,#fff1b8,#d5f5e8);display:flex;align-items:center;justify-content:center;font-size:44px}
+.pol img{width:100%;height:100%;object-fit:cover}
+.pol figcaption{margin-top:12px;font-weight:600;font-size:15px}
+/* puzzles */
+.card{background:#ffffffcc;backdrop-filter:blur(6px);border-radius:26px;padding:26px 18px;margin-bottom:30px;box-shadow:0 12px 30px #c06a9a26}
+.card h3{font-size:22px;margin-bottom:6px;color:#e0487f}
+.mem{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;max-width:360px;margin:16px auto}
+.tile{aspect-ratio:1;perspective:600px;cursor:pointer}
+.tile div{width:100%;height:100%;border-radius:16px;display:flex;align-items:center;justify-content:center;font-size:34px;transition:.5s;backface-visibility:hidden;position:absolute}
+.tile{position:relative}
+.tile .f{background:linear-gradient(135deg,var(--pink),var(--lav));color:#fff}
+.tile .b{background:#fff;transform:rotateY(180deg);box-shadow:inset 0 0 0 3px var(--pink)}
+.tile.open .f{transform:rotateY(180deg)}.tile.open .b{transform:rotateY(0)}
+.tile.done .b{background:#e6ffe9;box-shadow:inset 0 0 0 3px var(--mint)}
+.scr{font-size:34px;letter-spacing:8px;font-weight:700;color:var(--rose);margin:12px}
+input{font:inherit;padding:11px 16px;border-radius:24px;border:2px solid var(--pink);outline:0;margin:6px;text-align:center;max-width:90%}
+.msg{min-height:26px;font-weight:700;margin-top:6px}
+#sky{position:relative;height:260px;border-radius:20px;background:linear-gradient(#bfe9ff,#fff0f7);overflow:hidden;margin-top:12px}
+.hrt{position:absolute;bottom:-50px;font-size:38px;cursor:pointer;animation:rise linear forwards;user-select:none}
+@keyframes rise{to{transform:translateY(-330px)}}
+.prog{font-weight:700;margin:10px 0 24px}
+.bar{height:14px;background:#fff;border-radius:10px;overflow:hidden;max-width:320px;margin:8px auto}
+.bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--pink),var(--yellow));transition:.6s}
+/* letter */
+#letter{display:none;background:#fffdf5;border-radius:20px;padding:34px 24px;max-width:620px;margin:auto;box-shadow:0 14px 40px #ff8fb855;text-align:left;line-height:1.8;border:3px dashed var(--pink);animation:pop 1s}
+@keyframes pop{from{opacity:0;transform:scale(.7) rotate(-4deg)}}
+#lock{font-size:70px}
+#music{position:fixed;right:14px;bottom:14px;z-index:50;width:50px;height:50px;padding:0;font-size:22px;border-radius:50%}
+.conf{position:fixed;top:-40px;z-index:200;pointer-events:none;animation:fall 3.5s linear forwards}
+footer{padding:40px 10px 90px;text-align:center;font-family:'Pacifico';color:var(--rose)}
+</style>
+</head>
+<body>
+
+<div id="gate">
+  <div class="gift">🎁</div>
+  <p>Sakshi, there's a little surprise waiting for you… 💌</p>
+  <button id="openBtn">Tap to open 🌸</button>
+</div>
+
+<audio id="bgm" loop preload="auto" src="music/song.mp3"></audio>
+<button id="music" title="Music on/off">🎵</button>
+
+<section id="hero">
+  <div style="font-size:50px">🌸🍍🌷</div>
+  <h1>Happy Birthday</h1>
+  <div class="name">Sakshi Pokhriyal</div>
+  <div class="age">22</div>
+  <div class="type" id="typed"></div>
+  <div class="scroll">⌄</div>
+</section>
+
+<section class="reveal">
+  <h2>Make a wish 🍍</h2>
+  <p class="sub">Tap the candles to blow them out ✨</p>
+  <div id="cakeBox">
+    <svg viewBox="0 0 260 300" width="260">
+      <defs><pattern id="cr" width="20" height="20" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><path d="M0 0H20M0 0V20" stroke="#e0a21a" stroke-width="2.5" fill="none"/></pattern></defs>
+      <!-- crown -->
+      <g fill="#52c27a"><path d="M130 90 C90 60 80 30 100 8 C110 35 125 55 130 90Z"/><path d="M130 90 C170 60 180 30 160 8 C150 35 135 55 130 90Z"/><path d="M130 90 C120 50 125 20 130 0 C135 20 140 50 130 90Z" fill="#3fae68"/><path d="M130 90 C80 85 55 60 50 40 C80 50 110 65 130 90Z"/><path d="M130 90 C180 85 205 60 210 40 C180 50 150 65 130 90Z"/></g>
+      <!-- pineapple body -->
+      <ellipse cx="130" cy="185" rx="82" ry="98" fill="#ffd84d"/>
+      <ellipse cx="130" cy="185" rx="82" ry="98" fill="url(#cr)"/>
+      <ellipse cx="130" cy="185" rx="82" ry="98" fill="none" stroke="#e8a317" stroke-width="3"/>
+      <!-- cute face -->
+      <circle cx="102" cy="180" r="6" fill="#5b2a4a"/><circle cx="158" cy="180" r="6" fill="#5b2a4a"/>
+      <circle cx="90" cy="197" r="9" fill="#ff8fb8" opacity=".7"/><circle cx="170" cy="197" r="9" fill="#ff8fb8" opacity=".7"/>
+      <path d="M115 197 Q130 214 145 197" stroke="#5b2a4a" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+      <!-- candles 2 2 -->
+      <g class="candle" id="c1"><rect x="78" y="62" width="12" height="40" rx="3" fill="#ff8fb8"/><g class="flame"><ellipse cx="84" cy="52" rx="7" ry="12" fill="#ffb347"/><ellipse cx="84" cy="55" rx="3.5" ry="6" fill="#fff6b0"/></g></g>
+      <g class="candle" id="c2"><rect x="170" y="62" width="12" height="40" rx="3" fill="#9be7c4"/><g class="flame"><ellipse cx="176" cy="52" rx="7" ry="12" fill="#ffb347"/><ellipse cx="176" cy="55" rx="3.5" ry="6" fill="#fff6b0"/></g></g>
+    </svg>
+  </div>
+  <div id="wish"></div>
+</section>
+
+<section class="reveal">
+  <h2>Our little moments 📸</h2>
+  <p class="sub">Every picture is my favourite one</p>
+  <div class="grid" id="grid"></div>
+</section>
+
+<section class="reveal">
+  <h2>Surprise puzzles 🧩</h2>
+  <p class="sub">Solve all 4 to unlock your secret letter 💌</p>
+  <div class="bar"><i id="barFill"></i></div>
+  <div class="prog" id="prog">0 / 4 unlocked</div>
+
+  <div class="card">
+    <h3>1 · Memory Garden 🌷</h3>
+    <p>Match all the pairs!</p>
+    <div class="mem" id="mem"></div>
+    <div class="msg" id="memMsg"></div>
+  </div>
+
+  <div class="card">
+    <h3>2 · Scrambled Surprise 🔤</h3>
+    <p>Unscramble the word of the day</p>
+    <div class="scr" id="scr"></div>
+    <input id="scrIn" placeholder="Your answer"><button id="scrBtn">Check</button>
+    <div class="msg" id="scrMsg"></div>
+  </div>
+
+  <div class="card">
+    <h3>3 · Only-Us Riddle 💭</h3>
+    <p id="riddleQ"></p>
+    <input id="rIn" placeholder="Your answer"><button id="rBtn">Check</button>
+    <div class="msg" id="rMsg"></div>
+  </div>
+
+  <div class="card">
+    <h3>4 · Catch 22 Hearts 💖</h3>
+    <p>Pop 22 floating hearts for your 22nd year!</p>
+    <button id="hStart">Start</button> <b id="hCount">0 / 22</b>
+    <div id="sky"></div>
+  </div>
+</section>
+
+<section class="reveal">
+  <h2>Your secret letter 💌</h2>
+  <div id="lock">🔒</div>
+  <p class="sub" id="lockTxt">Complete the puzzles to open it…</p>
+  <div id="letter"></div>
+</section>
+
+<footer>Made with all my love, for you 🌸🍍💖</footer>
+
+<script>
+/* ===== EDIT THESE ===== */
+const CFG = {
+  yourName: "Sagar Bisht",
+  typedLines: ["Today the world got a little brighter ✨","Happy 22nd, my favourite person 💖","Scroll down, I made something for you 🌸"],
+  photos: [   // put files inside the /images folder with these exact names
+    {src:"images/mr k.jpeg", cap:"You + me = my favourite equation 💕"},
+    {src:"images/1st ever.jpeg", cap:"That smile could out-shine the sun ☀️"},
+    {src:"images/slayying.jpeg", cap:"Sweet like pineapple, bright like you 🍍"},
+    {src:"images/fairy.jpeg", cap:"My 3AM dreams and my 3PM reality 🌸"},
+    {src:"images/trio.jpeg", cap:"Trio of cuties"},
+    {src:"images/attitude cutiee.jpeg", cap:"The cutest attitude in town 😎"},
+  ],
+  scramble: {word:"BIRTHDAY"},
+  riddle: {q:"Where did we go on our first date? 💭 ", answers:["Pahadi bistro","Pahadi Bistro","pahadi bistro"], hint:"Edit answers in CFG.riddle.answers"},
+  letter: "Dear Sakshi,<br><br>Happy 22nd birthday, my love! 🎉 Thank you for being my smile, my peace and my favourite person. The way you support me and believe in me i just cant expres how much that means to me .<br><br>May this year bring you endless happiness, success and all the little joys you deserve. I'll be right next to you for every adventure and i will always believe in you and be your biggest supportter. 🌸<br><br>Forever yours,<br>"
+};
+/* ====================== */
+const $=s=>document.querySelector(s), bgm=$('#bgm');
+let solved=new Set();
+
+/* gate + music */
+$('#openBtn').onclick=()=>{bgm.play().catch(()=>{});$('#gate').classList.add('hide');burst();setTimeout(()=>$('#gate').remove(),1000)};
+$('#music').onclick=()=>{if(bgm.paused){bgm.play();$('#music').textContent='🎵'}else{bgm.pause();$('#music').textContent='🔇'}};
+
+/* falling petals */
+const pet=['🌸','🌷','🌼','🍍','💮','🦋','🌻'];
+setInterval(()=>{const e=document.createElement('div');e.className='fl';e.textContent=pet[Math.random()*pet.length|0];
+e.style.left=Math.random()*100+'vw';e.style.fontSize=14+Math.random()*18+'px';e.style.animationDuration=7+Math.random()*7+'s';
+document.body.appendChild(e);setTimeout(()=>e.remove(),14000)},500);
+function burst(){const em=['🎉','🎊','💖','🌸','🍍','✨','🎈'];for(let i=0;i<60;i++){const e=document.createElement('div');e.className='conf';e.textContent=em[Math.random()*em.length|0];
+e.style.left=Math.random()*100+'vw';e.style.fontSize=18+Math.random()*20+'px';e.style.animationDuration=2+Math.random()*3+'s';e.style.animationDelay=Math.random()*.8+'s';document.body.appendChild(e);setTimeout(()=>e.remove(),6500)}}
+
+/* typing */
+let li=0,ci=0,del=false;
+(function type(){const t=CFG.typedLines[li];$('#typed').textContent=t.slice(0,ci);
+if(!del&&ci++==t.length){del=true;return setTimeout(type,1800)}
+if(del&&--ci<0){del=false;ci=0;li=(li+1)%CFG.typedLines.length}
+setTimeout(type,del?30:70)})();
+
+/* reveal on scroll */
+const io=new IntersectionObserver(es=>es.forEach(e=>e.isIntersecting&&e.target.classList.add('show')),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(e=>io.observe(e));
+
+/* cake */
+let out=0;
+['c1','c2'].forEach(id=>$('#'+id).onclick=function(){if(this.classList.contains('out'))return;this.classList.add('out');
+if(++out==2){$('#wish').textContent='Wish made! May every single one come true 💫';burst()}});
+
+/* gallery */
+CFG.photos.forEach((p,i)=>{const f=document.createElement('figure');f.className='pol';f.style.setProperty('--r',(i%2?2.5:-2.5)+'deg');
+f.innerHTML=`<div class="ph"><img src="${p.src}" alt="" onerror="this.remove();this.parentNode&&0"></div><figcaption>${p.cap}</figcaption>`;
+const img=f.querySelector('img');img.onerror=()=>{f.querySelector('.ph').textContent='📷'};
+$('#grid').appendChild(f)});
+
+/* progress */
+function solve(k){solved.add(k);$('#prog').textContent=solved.size+' / 4 unlocked';$('#barFill').style.width=solved.size*25+'%';burst();
+if(solved.size==4){$('#lock').textContent='🔓';$('#lockTxt').textContent='You did it, genius! 💖';const l=$('#letter');l.innerHTML=CFG.letter+CFG.yourName+' 💋';l.style.display='block';setTimeout(()=>l.scrollIntoView({behavior:'smooth',block:'center'}),600)}}
+
+/* 1 memory */
+(function(){const em=['🌸','🍍','🌷','🧸','💖','🦋','🌻','🎂'];const d=[...em,...em].sort(()=>Math.random()-.5);let a=null,lock=false,m=0;
+d.forEach(x=>{const t=document.createElement('div');t.className='tile';t.innerHTML=`<div class="f">?</div><div class="b">${x}</div>`;
+t.onclick=()=>{if(lock||t.classList.contains('open'))return;t.classList.add('open');
+if(!a){a=t;return}
+if(a.textContent==t.textContent){a.classList.add('done');t.classList.add('done');a=null;if(++m==8){$('#memMsg').textContent='Perfect match, just like us 💕';solve('mem')}}
+else{lock=true;const b=a;a=null;setTimeout(()=>{b.classList.remove('open');t.classList.remove('open');lock=false},800)}};
+$('#mem').appendChild(t)})})();
+
+/* 2 scramble: new word every time she opens the site */
+(function(){
+  const WORDS=[
+    {w:"PINEAPPLE", h:"Spiky outside, sweet inside, just like our cake 🍍"},
+    {w:"CLINICAL PSYCHOLOGY",  h:"So that you can be motivated 🧠"},
+    {w:"SUNSHINE",  h:"What you bring into my life ☀️"},
+    {w:"FLOWERS",   h:"Pretty things that bloom, like this page 🌸"},
+    {w:"FOREVER",   h:"How long I want this to last 💍"},
+    {w:"BUTTERFLY", h:"It flutters in my stomach when I see you 🦋"},
+    {w:"SMILE",     h:"The best thing you wear every day 😊"},
+    {w:"CUDDLES",   h:"Our favourite way to spend a cold night 🧸"},
+    {w:"SURPRISE",  h:"What this whole website is 🎁"},
+    {w:"PRINCESS",  h:"What you are today 👑"},
+    {w:"HAPPINESS", h:"What I wish for you, always 💖"},
+    {w:"SAKSHI",    h:"My favourite name in the world 💕"}
+  ];
+
+  // avoid repeating the word she saw last time
+  let last=-1;
+  try{ last=parseInt(localStorage.getItem('lastWord')); }catch(e){}
+  let i;
+  do{ i=Math.floor(Math.random()*WORDS.length); }while(i===last && WORDS.length>1);
+  try{ localStorage.setItem('lastWord', i); }catch(e){}
+
+  const w=WORDS[i].w;
+  let s;
+  do{ s=[...w].sort(()=>Math.random()-.5).join(''); }while(s===w);
+
+  $('#scr').textContent=s;
+  const hint=document.createElement('div');
+  hint.className='msg';
+  hint.style.fontWeight='600';
+  hint.textContent='Hint: '+WORDS[i].h;
+  $('#scr').after(hint);
+
+  $('#scrBtn').onclick=()=>{
+    if($('#scrIn').value.trim().toUpperCase()===w){
+      $('#scrMsg').textContent='Yes!! 🎉';
+      solve('scr');
+    }else{
+      $('#scrMsg').textContent='Oops, try again 🙈';
+    }
+  };
+})();
+
+/* 3 riddle */
+$('#riddleQ').textContent=CFG.riddle.q;
+$('#rBtn').onclick=()=>{const v=$('#rIn').value.trim().toLowerCase();if(CFG.riddle.answers.some(a=>a.toLowerCase()==v)){$('#rMsg').textContent='You remember everything 🥹💖';solve('r')}else $('#rMsg').textContent='Hmm… think harder, cutie 💭'};
+
+/* 4 hearts */
+let hc=0,hi;
+$('#hStart').onclick=()=>{if(hi||solved.has('h'))return;hc=0;$('#hCount').textContent='0 / 22';
+hi=setInterval(()=>{const h=document.createElement('div');h.className='hrt';h.textContent=['💖','💗','💕','💘'][Math.random()*4|0];
+h.style.left=Math.random()*85+'%';h.style.animationDuration=3+Math.random()*2+'s';
+h.onclick=()=>{h.remove();$('#hCount').textContent=++hc+' / 22';if(hc>=22){clearInterval(hi);hi=null;$('#sky').innerHTML='';solve('h')}};
+$('#sky').appendChild(h);setTimeout(()=>h.remove(),5200)},550)};
+</script>
+</body>
+</html>
